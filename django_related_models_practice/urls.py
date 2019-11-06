@@ -15,5 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from app.views import album_list, album_detail
+from app.models import Album
 
-urlpatterns = [path("admin/", admin.site.urls)]
+urlpatterns = [
+    path("admin/", admin.site.urls),
+    path("", album_list, name="album_list"),
+    # path("album/<id>", album_detail, name="album_name"),
+]
